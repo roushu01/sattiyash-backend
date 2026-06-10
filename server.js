@@ -23,10 +23,10 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
+      "https://sattiyash-frontend-git-main-roushu01s-projects.vercel.app",
     ],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 
