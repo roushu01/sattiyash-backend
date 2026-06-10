@@ -1,0 +1,51 @@
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema(
+  {
+    clerkId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+
+    name: {
+      type: String,
+      required: true,
+    },
+
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+
+    phone: {
+      type: String,
+      required: true,
+    },
+    refferalCode:{
+      type:String,
+      unique:true,
+    },
+    referredBy:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"User",
+      default:null,
+    },
+    walletBalance:{
+     type:Number,
+     default:100,
+    },
+    Network:{
+      type:Number,
+      default:0
+    }
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
