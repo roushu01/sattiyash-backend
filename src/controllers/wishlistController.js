@@ -1,4 +1,4 @@
-const WishList=require('../models/wishListModel.js')
+const WishList=require('../models/wishlistModel.js')
 const jwt=require('jsonwebtoken')
 const addToWishlist = async (req, res) => {
   try {
