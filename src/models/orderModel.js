@@ -88,7 +88,7 @@ const OrderSchema = new mongoose.Schema(
 
     paymentMethod: {
       type: String,
-      enum: ["COD", "UPI", "Card", "NetBanking"],
+      enum: ["COD", "UPI", "Card", "NetBanking", "Razorpay"],
       default: "COD",
     },
 
@@ -109,6 +109,14 @@ const OrderSchema = new mongoose.Schema(
         "Cancelled",
       ],
       default: "Pending",
+    },
+    razorpayOrderId: {
+      type: String,
+      sparse: true,
+    },
+    razorpayPaymentId: {
+      type: String,
+      sparse: true,
     },
     coins:{
       type:Number,
