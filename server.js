@@ -9,7 +9,8 @@ const connectDB = require('./src/controllers/dbconfig.js');
 const express = require('express');
 const dns = require("dns");
 const cookieParser = require("cookie-parser");
-const cors = require("cors");   // <-- add this
+const cors = require("cors");
+require("dotenv").config();
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
@@ -19,11 +20,10 @@ connectDB();
 
 app.use(cookieParser());
 
-
-
 app.use(
   cors({
     origin: [
+      "http://localhost:5173",
       "https://sattiyash-frontend-git-main-roushu01s-projects.vercel.app",
     ],
     credentials: true,
