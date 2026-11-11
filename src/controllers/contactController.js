@@ -1,6 +1,6 @@
 const express=require("express")
 const contact=require("../models/contactModel.js")
-const jwt=require("jsonwebToken")
+const jwt=require("jsonwebtoken")
 const createContact=async(req,res)=>{
     try{
     const {name,message,email}=req.body
